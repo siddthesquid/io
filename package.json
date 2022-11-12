@@ -1,0 +1,30 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "clean": "nx run-many --target=clean",
+    "wipe": "nx run-many --target=wipe",
+    "generate": "nx run-many --target=generate",
+    "build": "nx affected --target=build",
+    "dev": "nx run-many --target=dev",
+    "test": "nx affected --target=test",
+    "format": "nx affected --target=format",
+    "lint": "nx affected --target=lint",
+    "docgen": "nx affected --target=docgen",
+    "commitlint": "npx commitlint --from origin/main --to HEAD --verbose",
+    "ci:commitlint": "npx commitlint --from origin/main --to HEAD --verbose",
+    "ci:version": "nx affected --target=ci:version",
+    "ci:generate": "nx affected --target=ci:generate",
+    "ci:build": "nx affected --target=ci:build",
+    "ci:test": "nx affected --target=ci:test",
+    "ci:lint": "nx affected --target=ci:lint",
+    "ci:publish": "nx affected --target=ci:publish"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "envinfo": "^7.8.1",
+    "nx": "15.0.7"
+  }
+}

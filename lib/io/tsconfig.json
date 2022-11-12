@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    // Module resolution/import rules
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "composite": true,
+    "moduleDetection": "force",
+    "preserveSymlinks": true,
+
+    // Typescript source code rules
+    "lib": ["es6"],
+    "noLib": false,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitThis": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Types of files that are generated
+    "module": "commonjs",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Mostly non-effectful typescript emit settings
+    "target": "es6",
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "stripInternal": true
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["dist", "node_modules"]
+}
