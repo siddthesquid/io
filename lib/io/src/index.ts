@@ -4,7 +4,7 @@ import { pipe } from "@tsplus/stdlib/data/Function/pipe"
 import { Tag } from "@tsplus/stdlib/service/Tag"
 
 export interface ConsoleService {
-  readonly log: (msg: string) => T.Effect<never, never, void>
+  readonly log: (msg: string) => T.Effect<unknown, never, void>
 }
 
 export const ConsoleService = Tag<ConsoleService>()
@@ -22,7 +22,7 @@ export const ConsoleNull = L.fromEffect(ConsoleService)(
 )
 
 export interface LogService {
-  readonly info: (msg: string) => T.Effect<never, never, void>
+  readonly info: (msg: string) => T.Effect<unknown, never, void>
 }
 
 export const LogService = Tag<LogService>()
