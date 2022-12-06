@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "clean": "nx run-many --target=clean",
-    "wipe": "nx run-many --target=wipe",
+    "wipe": "nx run-many --target=wipe && rm -rf node_modules",
     "generate": "nx run-many --target=generate",
     "build": "nx affected --target=build",
     "dev": "nx run-many --target=dev",

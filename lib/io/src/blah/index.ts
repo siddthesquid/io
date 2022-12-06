@@ -36,13 +36,39 @@ export const ConsoleTee = <RIn, E>(
     ),
   )
 
+export const ConsoleTee2 = (message: string) =>
+  Layer.fromEffect(ConsoleService)(
+    Effect.gen(function* ($) {
+      const next = yield* $(Effect.service(ConsoleService))
+      return {
+        log: (msg: string) =>
+          Effect.gen(function* ($) {
+            yield* $(next.log(message + msg))
+          }),
+      }
+    }),
+  )
+
 export const program = Effect.gen(function* ($) {
   const { log } = yield* $(Effect.service(ConsoleService))
   yield* $(log("foo"))
 })
 
-pipe(
+const m1 = pipe(
   program,
+  Effect.provideLayer(ConsoleTee2("yo")),
+  Effect.flatMap(() =>
+    Effect.gen(function* ($) {
+      const { log } = yield* $(Effect.service(ConsoleService))
+      yield* $(log("fdsafads"))
+    }),
+  ),
+)
+
+const m2 = pipe(program, Effect.provideLayer(ConsoleTee2("bro")))
+
+pipe(
+  Effect.zipPar(m1)(m2),
   Effect.provideLayer(ConsoleTee(ConsoleLive)),
   Effect.provideLayer(ConsoleLive),
   Effect.unsafeFork,
