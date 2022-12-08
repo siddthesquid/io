@@ -4,14 +4,16 @@ import Clock from ".."
 import operation from "./now"
 
 const test_operation = (date: Date) => {
-  test(date.toISOString(), () => {
-    const actual = date
-    const expected = pipe(
-      operation,
+  test(date.toISOString(), async () => {
+    await pipe(
+      Effect.gen(function* ($) {
+        const actual = date
+        const expected = yield* $(operation)
+        expect(actual).toEqual(expected)
+      }),
       Effect.provideLayer(Clock.layers.constant(date)),
-      Effect.unsafeRunSync,
+      Effect.unsafeRunPromise,
     )
-    expect(actual).toEqual(expected)
   })
 }
 
