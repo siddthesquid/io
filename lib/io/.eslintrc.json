@@ -18,6 +18,15 @@
       { "argsIgnorePattern": "^_" }
     ],
     "@typescript-eslint/no-redeclare": "off",
-    "func-names": "off"
-  }
+    "func-names": "off",
+    "no-underscore-dangle": "off"
+  },
+  "overrides": [
+    {
+      "files": ["./test/*.ts", "*.test.ts", "*.spec.ts"],
+      "rules": {
+        "@typescript-eslint/no-unused-expressions": "off"
+      }
+    }
+  ]
 }

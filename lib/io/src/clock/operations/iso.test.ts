@@ -17,7 +17,7 @@ const test_operation = (date: Date) => {
   })
 }
 
-describe("api/iso", () => {
+describe("operations/iso", () => {
   test_operation(new Date(1638688737000))
   test_operation(new Date(1408688737000))
   test_operation(new Date(0))

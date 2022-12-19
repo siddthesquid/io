@@ -42,3 +42,6 @@ next-env.d.ts
 # Vim swap files
 *.swp
 *.swo
+
+# Backup files
+*.bak
