@@ -9,12 +9,14 @@ importers:
       cz-conventional-changelog: ^3.3.0
       envinfo: ^7.8.1
       nx: 15.0.7
+      rimraf: ^3.0.2
     devDependencies:
       '@commitlint/cli': 17.2.0
       '@commitlint/config-conventional': 17.2.0
       cz-conventional-changelog: 3.3.0
       envinfo: 7.8.1
       nx: 15.0.7
+      rimraf: 3.0.2
 
   lib/io:
     specifiers:
@@ -69,6 +71,51 @@ importers:
       ts-node: 10.9.1_isi37xqaidsnibk4v5sxhbboya
       typescript: 4.8.4
     publishDirectory: dist
+
+  lib/program:
+    specifiers:
+      '@swc/core': ^1.2.235
+      '@swc/jest': ^0.2.22
+      '@types/jest': ^28.1.6
+      '@types/node': 18.7.2
+      '@typescript-eslint/eslint-plugin': ^5.33.0
+      '@typescript-eslint/parser': ^5.33.0
+      eslint: 8.21.0
+      eslint-config-airbnb-base: ^15.0.0
+      eslint-config-airbnb-typescript: ^17.0.0
+      eslint-config-prettier: ^8.5.0
+      eslint-plugin-import: ^2.26.0
+      eslint-plugin-jest: ^26.8.3
+      eslint-plugin-prettier: ^4.2.1
+      eslint-plugin-unicorn: ^43.0.2
+      fp-ts: ^2.13.1
+      jest: ^28.1.3
+      prettier: ^2.7.1
+      rimraf: ^3.0.2
+      ts-node: ^10.9.1
+      typescript: ^4.8.4
+    dependencies:
+      fp-ts: 2.13.1
+    devDependencies:
+      '@swc/core': 1.3.14
+      '@swc/jest': 0.2.23_@swc+core@1.3.14
+      '@types/jest': 28.1.8
+      '@types/node': 18.7.2
+      '@typescript-eslint/eslint-plugin': 5.42.1_u7pphym74nkicmnqky44p3nup4
+      '@typescript-eslint/parser': 5.42.1_n6o7c4j52sqif4e7zyvkw23cty
+      eslint: 8.21.0
+      eslint-config-airbnb-base: 15.0.0_jatgrcxl4x7ywe7ak6cnjca2ae
+      eslint-config-airbnb-typescript: 17.0.0_y67ktzew5jclpbsnsqce3ykd7i
+      eslint-config-prettier: 8.5.0_eslint@8.21.0
+      eslint-plugin-import: 2.26.0_7raakxkar2foj7cnoyztujapce
+      eslint-plugin-jest: 26.9.0_bz2fxdv6atu4diwqegmkozok4a
+      eslint-plugin-prettier: 4.2.1_h62lvancfh4b7r6zn2dgodrh5e
+      eslint-plugin-unicorn: 43.0.2_eslint@8.21.0
+      jest: 28.1.3_qoshe4ynlzar462zktl2ctj2mq
+      prettier: 2.7.1
+      rimraf: 3.0.2
+      ts-node: 10.9.1_isi37xqaidsnibk4v5sxhbboya
+      typescript: 4.8.4
 
 packages:
 
@@ -2810,6 +2857,10 @@ packages:
       mime-types: 2.1.35
     dev: true
 
+  /fp-ts/2.13.1:
+    resolution: {integrity: sha512-0eu5ULPS2c/jsa1lGFneEFFEdTbembJv8e4QKXeVJ3lm/5hyve06dlKZrpxmMwJt6rYen7sxmHHK2CLaXvWuWQ==}
+    dev: false
+
   /fs-constants/1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
     dev: true
@@ -2935,7 +2986,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true

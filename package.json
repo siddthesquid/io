@@ -2,8 +2,9 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "env": "envinfo",
     "clean": "nx run-many --target=clean",
-    "wipe": "nx run-many --target=wipe && rm -rf node_modules",
+    "wipe": "nx run-many --target=wipe && rimraf node_modules && rm pnpm-lock.yaml",
     "generate": "nx run-many --target=generate",
     "build": "nx affected --target=build",
     "dev": "nx run-many --target=dev",
@@ -25,6 +26,7 @@
     "@commitlint/config-conventional": "^17.1.0",
     "cz-conventional-changelog": "^3.3.0",
     "envinfo": "^7.8.1",
-    "nx": "15.0.7"
+    "nx": "15.0.7",
+    "rimraf": "^3.0.2"
   }
 }
