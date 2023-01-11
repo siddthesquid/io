@@ -1,8 +1,8 @@
 {
   "folders": [
     {
-      "name": "@siddthesquid/io",
-      "path": "./lib/io"
+      "name": "@siddthesquid/program",
+      "path": "./lib/program"
     }
   ],
   "settings": {
@@ -13,12 +13,12 @@
       "out/": true,
       "coverage/": true,
       "tsconfig*.json*": false,
+      "jest.config.*": true,
       ".eslintignore": true,
       ".eslintrc.json": false,
       ".prettierrc.json": true,
       ".prettierignore": true,
       "next.config.js": true,
-      "jest.config.*": false,
       "node_modules/": true,
       "*.tsbuildinfo": true,
       "next-env.d.ts": true

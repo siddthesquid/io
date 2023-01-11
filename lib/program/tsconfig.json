@@ -18,7 +18,7 @@
     "experimentalDecorators": true,
 
     // Import rules
-    "baseUrl": ".",
+    "baseUrl": "./",
     "moduleResolution": "Node",
     "paths": {
       "#": ["src/index"],
@@ -44,7 +44,7 @@
     "newLine": "LF",
     "removeComments": false,
     "stripInternal": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "emitDecoratorMetadata": true,
     "jsx": "preserve",
 

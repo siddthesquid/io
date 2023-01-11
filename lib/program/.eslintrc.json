@@ -19,7 +19,8 @@
     ],
     "@typescript-eslint/no-redeclare": "off",
     "func-names": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "import/extensions": "off"
   },
   "overrides": [
     {

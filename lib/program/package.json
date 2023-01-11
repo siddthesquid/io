@@ -14,7 +14,7 @@
     "build": "tsc -p ./tsconfig.build.json",
     "dev": "tsc -w -p ./tsconfig.build.json",
     "test": "jest",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" && eslint --fix \"**/*.{ts,tsx,js,jsx}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\" && eslint --fix \"**/*.{ts,tsx,js,jsx}\"",
     "lint": "eslint src/**",
     "docgen": "echo \"implement docgen\"",
     "ci:generate": "echo \"Nothing to generate\"",
@@ -42,6 +42,7 @@
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2",
     "typescript": "^4.8.4"
   },
   "engines": {

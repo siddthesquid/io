@@ -60,21 +60,3 @@ const s = setImmediate(() => {
 process.on("uncaughtException", (err) => {
   console.log("uncaughtException", err)
 })
-
-const myIterable = {
-  *[Symbol.iterator]() {
-    yield 1
-    yield "yp"
-    yield 3
-    yield 31
-    yield 32
-    yield 33
-    yield 34
-    yield 35
-    yield 36
-    yield 37
-    yield 38
-  },
-}
-
-const a = myIterable[Symbol.iterator]().next().value
