@@ -1,4 +1,4 @@
-import { Program } from "./definition"
+import { Program } from "./definition2"
 
 const Program = {}
 
