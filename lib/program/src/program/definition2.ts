@@ -61,3 +61,8 @@ type P<A> = PromiseLike<A> & {
 }
 
 const trySomething = async () => 10
+
+const a = {
+  a: 10,
+}
+

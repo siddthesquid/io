@@ -4,7 +4,7 @@
   "scripts": {
     "env": "envinfo",
     "clean": "nx run-many --target=clean",
-    "wipe": "nx run-many --target=wipe && rimraf node_modules && rm pnpm-lock.yaml",
+    "wipe": "nx run-many --target=wipe && rimraf node_modules && rimraf pnpm-lock.yaml",
     "generate": "nx run-many --target=generate",
     "build": "nx affected --target=build",
     "dev": "nx run-many --target=dev",
