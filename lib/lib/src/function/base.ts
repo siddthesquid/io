@@ -3,6 +3,15 @@ const as =
   () =>
     value
 
+const sync = <T>(value: () => T) => value
+
+const id = <T>(value: T) => value
+
+const declare =
+  <T>() =>
+  (value: T) =>
+    value
+
 const tap =
   <T>(fn: (value: T) => any) =>
   (value: T): T => {
@@ -15,11 +24,24 @@ const provide =
   <U>(fn: (value: T) => U) =>
     fn(value)
 
-const logWith =
-  (tag: string) =>
+const debugWith =
+  (tag: string = "DEBUG: ") =>
   <T>(value: T) =>
-    tap<T>((value_) => console.log(`${tag || ""}${value_}`))(value)
+    tap<T>((value_) =>
+      console.log(`${tag || ""}${JSON.stringify(value_, null, 2)}`),
+    )(value)
 
-const log = <T>(value: T) => tap<T>(console.log)(value)
+const debug = <T>(value: T) => tap<T>(console.log)(value)
 
-export { as, tap, provide, log, logWith }
+const _BaseUtil = {
+  as,
+  sync,
+  id,
+  declare,
+  tap,
+  provide,
+  debug,
+  debugWith,
+}
+
+export default _BaseUtil

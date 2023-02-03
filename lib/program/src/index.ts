@@ -1,5 +1,5 @@
+import { Program } from "#/program"
 import { flow, pipe } from "fp-ts/lib/function"
-import { Program } from "./program"
 
 export { pipe, flow, Program }
 

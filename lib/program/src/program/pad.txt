@@ -1,0 +1,45 @@
+ProgramLike -> Program | Promise | Result | Value
+
+Program
+- there is one root program. it is responsible for launching any other programs
+it needs to and creating all resource instances
+- programs can be run from programs - it's the same as forking and joining a thread
+
+Thread
+- must be forked from program
+- can be interrupted
+- can add 'then' events to it
+- can also be joined to any number of programs
+  - errors are lifted, but resource management still belongs to the launched thread
+
+Resource
+- requires a create and destroy function
+- a resource has an create and cleanup lifecycle.
+- must be launched by a program
+- if you have access to a resource, it is safe to use
+
+Result
+- either a success or failure
+- a failure has a message and a stack trace
+- a success has a value
+- used to await a thread without lifting errors
+- can only be awaited by a program
+
+Program.do functions
+=====================
+$run
+$fork - 
+  Program<Kernel, Exception, Value>
+    => Program<{}, never, Thread<Exception, Value>>
+
+$join
+$await
+$kill
+$then
+
+$use
+=
+
+Complete form
+=============
+[var] => Kernel => Exception | Value

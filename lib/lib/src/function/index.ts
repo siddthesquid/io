@@ -1,13 +1,9 @@
-import { as, log, logWith, provide, tap } from "./base"
+import _BaseUtil from "./base"
 import { flow } from "./flow"
 import { pipe } from "./pipe"
 
-const FunctionUtil = {
-  as,
-  tap,
-  log,
-  logWith,
-  provide,
+const _FunctionUtil = {
+  ..._BaseUtil,
 }
 
-export { flow, pipe, FunctionUtil }
+export { flow, pipe, _FunctionUtil }

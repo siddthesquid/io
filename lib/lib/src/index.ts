@@ -1,7 +1,9 @@
-import { flow, FunctionUtil, pipe } from "./function"
+import { flow, pipe, _FunctionUtil } from "./function"
+import _MemoryUtil from "./memory"
 
 const X = {
-  ...FunctionUtil,
+  ..._FunctionUtil,
+  ..._MemoryUtil,
 }
 
 export { X, flow, pipe }
