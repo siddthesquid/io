@@ -3,6 +3,7 @@
 // - filter
 // - reduce
 // - zip
+// - zipOrElse
 // - flatMap
 // - traverse
 // - repeat
@@ -14,6 +15,9 @@
 // - until
 // - to
 // - collect
+// - mux
+// - demux
+// - tee
 //
 // - iterables are lazy, so we should try to maintain that
 // - iterables have an end
@@ -40,11 +44,10 @@
 import { flow, pipe, X } from "#"
 
 type Mutable<T> = {
-  get: () => T
-  set: (value: T) => void
+  access: () => T
+  assign: (value: T) => void
+  mutate: (_: (value: T) => void) => void
 }
-
-type MutableIterable<T> = Iterable<Mutable<T>>
 
 const throwIfUndefined =
   (message: string) =>
@@ -139,7 +142,17 @@ const drop =
     })
   }
 
-const collect = <T>(iterable: Iterable<T>): T[] => [...iterable]
+const collect = <T>(iterable: Iterable<T>): T[] => {
+  const result: T[] = []
+  const iterator = iter(iterable)
+  while (true) {
+    const { value, done } = iterator.next()
+    if (done) {
+      return result
+    }
+    result.push(value)
+  }
+}
 
 const head = <T>(iterable: Iterable<T>): T | undefined => {
   const iterator = iter(iterable)
@@ -192,11 +205,11 @@ const forEach =
   }
 
 const reduce =
-  <A, I>(initial: I, f: (b: I) => (a: A) => I) =>
+  <A, I>(initial: I, f: (acc: I, next: A) => I) =>
   (iterable: Iterable<A>): I => {
     let result = initial
-    forEach((a: A) => {
-      result = f(result)(a)
+    forEach((next: A) => {
+      result = f(result, next)
     })(iterable)
     return result
   }
@@ -237,31 +250,15 @@ const zipOrElse = <T extends Iterable<any>[], I>(
   })
 }
 
-type Edge<V, E> = {
-  from: V
-  to: V
-  weight: E
+const peek = <T>(iterable: Iterable<T>): IteratorResult<T> => {
+  const iterator = iter(iterable)
+  const result = iterator.next()
+  return result
 }
 
-type Graph<V, E> = {
-  edges: (from?: V, to?: V) => Iterable<Edge<V, E>>
-}
-
-const mapEdges =
-  <E, F>(f: (weight: E) => F) =>
-  <V>(graph: Graph<V, E>): Graph<V, F> => ({
-    edges: (from, to) =>
-      pipe(
-        graph.edges(from, to),
-        map((edge) => ({ ...edge, weight: f(edge.weight) })),
-      ),
-  })
-
-const shortestPath = <V>(
-  graph: Graph<V, number>,
-  from: V,
-  to: V,
-): Edge<V, number>[] => {}
+// const until =
+//   <T>(predicate: (t: T) => boolean) =>
+//   (iterable: Iterable<T>): Iterable<T> =>
 
 // `until` takes a predicate and an iterable and returns an iterable
 
@@ -269,7 +266,8 @@ const program = flow(
   X.as(count()), //
   take(10),
   drop(3),
-  collect,
+  X.tap(forEach(X.debugWith(""))),
+  reduce(0, (acc, next) => acc + next),
   X.debugWith(""),
 )
 
