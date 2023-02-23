@@ -1,9 +1,8 @@
-import _BaseUtil from "./base"
-import { flow } from "./flow"
-import { pipe } from "./pipe"
+import { flow, pipe } from "fp-ts/lib/function"
+import { Base } from "./operations/base"
 
-const _FunctionUtil = {
-  ..._BaseUtil,
+const X = {
+  ...Base,
 }
 
-export { flow, pipe, _FunctionUtil }
+export { flow, pipe, X }

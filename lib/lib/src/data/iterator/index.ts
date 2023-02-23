@@ -266,6 +266,7 @@ const program = flow(
   X.as(count()), //
   take(10),
   drop(3),
+  collect,
   X.tap(forEach(X.debugWith(""))),
   reduce(0, (acc, next) => acc + next),
   X.debugWith(""),

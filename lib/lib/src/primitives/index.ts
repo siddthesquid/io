@@ -82,8 +82,13 @@ A graph is
 - given a unique ID A
 - return a list of all edges going out of it
 
+- return a list of all edges
+
 
 - array
 - object
+
+
+Tag<"yo", X>
 
 */

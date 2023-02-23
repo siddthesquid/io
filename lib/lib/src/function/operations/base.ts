@@ -31,9 +31,9 @@ const debugWith =
       console.log(`${tag || ""}${JSON.stringify(value_, null, 2)}`),
     )(value)
 
-const debug = <T>(value: T) => tap<T>(console.log)(value)
+const debug = debugWith("")
 
-const _BaseUtil = {
+const Base = {
   as,
   sync,
   id,
@@ -44,4 +44,4 @@ const _BaseUtil = {
   debugWith,
 }
 
-export default _BaseUtil
+export { Base }

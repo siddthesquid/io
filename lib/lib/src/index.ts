@@ -1,9 +1,5 @@
-import { flow, pipe, _FunctionUtil } from "./function"
-import _MemoryUtil from "./memory"
+import { flow, pipe } from "fp-ts/lib/function"
 
-const X = {
-  ..._FunctionUtil,
-  ..._MemoryUtil,
-}
+import { X } from "./function"
 
 export { X, flow, pipe }
