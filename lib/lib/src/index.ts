@@ -1,5 +1,7 @@
-import { flow, pipe } from "fp-ts/lib/function"
+import { z } from "zod"
 
-import { X } from "./function"
+import { flow, pipe, X } from "./function"
 
-export { X, flow, pipe }
+import { Numeric } from "./numeric"
+
+export { X, z, flow, pipe, Numeric }

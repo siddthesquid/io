@@ -1,411 +1,93 @@
-/* eslint-disable prefer-rest-params */
-export function pipe<A1>(a1: A1): A1
-
-export function pipe<A1, A2>(a1: A1, a1a2: (a: A1) => A2): A2
-
-export function pipe<A1, A2, A3>(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-): A3
-
-export function pipe<A1, A2, A3, A4>(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-): A4
-
-export function pipe<A1, A2, A3, A4, A5>(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-): A5
-
-export function pipe<A1, A2, A3, A4, A5, A6>(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-): A6
-
-export function pipe<A1, A2, A3, A4, A5, A6, A7>(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-): A7
-
-export function pipe<A1, A2, A3, A4, A5, A6, A7, A8>(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-): A8
-
-export function pipe<A1, A2, A3, A4, A5, A6, A7, A8, A9>(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-): A9
-
-export function pipe<A1, A2, A3, A4, A5, A6, A7, A8, A9, A10>(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-  a9a10: (i: A9) => A10,
-): A10
-
-export function pipe<A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11>(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-  a9a10: (i: A9) => A10,
-  a10a11: (j: A10) => A11,
-): A11
-
-export function pipe<A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12>(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-  a9a10: (i: A9) => A10,
-  a10a11: (j: A10) => A11,
-  a11a12: (k: A11) => A12,
-): A12
-
-export function pipe<A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13>(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-  a9a10: (i: A9) => A10,
-  a10a11: (j: A10) => A11,
-  a11a12: (k: A11) => A12,
-  a12a13: (l: A12) => A13,
-): A13
-
-export function pipe<
-  A1,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
->(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-  a9a10: (i: A9) => A10,
-  a10a11: (j: A10) => A11,
-  a11a12: (k: A11) => A12,
-  a12a13: (l: A12) => A13,
-  a13a14: (m: A13) => A14,
-): A14
-
-export function pipe<
-  A1,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
->(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-  a9a10: (i: A9) => A10,
-  a10a11: (j: A10) => A11,
-  a11a12: (k: A11) => A12,
-  a12a13: (l: A12) => A13,
-  a13a14: (m: A13) => A14,
-  a14a15: (n: A14) => A15,
-): A15
-
-export function pipe<
-  A1,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
-  A16,
->(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-  a9a10: (i: A9) => A10,
-  a10a11: (j: A10) => A11,
-  a11a12: (k: A11) => A12,
-  a12a13: (l: A12) => A13,
-  a13a14: (m: A13) => A14,
-  a14a15: (n: A14) => A15,
-  a15a16: (o: A15) => A16,
-): A16
-
-export function pipe<
-  A1,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
-  A16,
-  A17,
->(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-  a9a10: (i: A9) => A10,
-  a10a11: (j: A10) => A11,
-  a11a12: (k: A11) => A12,
-  a12a13: (l: A12) => A13,
-  a13a14: (m: A13) => A14,
-  a14a15: (n: A14) => A15,
-  a15a16: (o: A15) => A16,
-  a16a17: (p: A16) => A17,
-): A17
-
-export function pipe<
-  A1,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
-  A16,
-  A17,
-  A18,
->(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-  a9a10: (i: A9) => A10,
-  a10a11: (j: A10) => A11,
-  a11a12: (k: A11) => A12,
-  a12a13: (l: A12) => A13,
-  a13a14: (m: A13) => A14,
-  a14a15: (n: A14) => A15,
-  a15a16: (o: A15) => A16,
-  a16a17: (p: A16) => A17,
-  a17a18: (q: A17) => A18,
-): A18
-
-export function pipe<
-  A1,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
-  A16,
-  A17,
-  A18,
-  A19,
->(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-  a9a10: (i: A9) => A10,
-  a10a11: (j: A10) => A11,
-  a11a12: (k: A11) => A12,
-  a12a13: (l: A12) => A13,
-  a13a14: (m: A13) => A14,
-  a14a15: (n: A14) => A15,
-  a15a16: (o: A15) => A16,
-  a16a17: (p: A16) => A17,
-  a17a18: (q: A17) => A18,
-  a18a19: (r: A18) => A19,
-): A19
-
-export function pipe<
-  A1,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
-  A16,
-  A17,
-  A18,
-  A19,
-  A20,
->(
-  a1: A1,
-  a1a2: (a: A1) => A2,
-  a2a3: (b: A2) => A3,
-  a3a4: (c: A3) => A4,
-  a4a5: (d: A4) => A5,
-  a5a6: (e: A5) => A6,
-  a6a7: (f: A6) => A7,
-  a7a8: (g: A7) => A8,
-  a8a9: (h: A8) => A9,
-  a9a10: (i: A9) => A10,
-  a10a11: (j: A10) => A11,
-  a11a12: (k: A11) => A12,
-  a12a13: (l: A12) => A13,
-  a13a14: (m: A13) => A14,
-  a14a15: (n: A14) => A15,
-  a15a16: (o: A15) => A16,
-  a16a17: (p: A16) => A17,
-  a17a18: (q: A17) => A18,
-  a18a19: (r: A18) => A19,
-  a19a20: (s: A19) => A20,
-): A20
-
-export function pipe(a1: unknown, ...fs: Function[]): unknown {
-  try {
-    let value = a1
-    for (let i = 0; i < fs.length; i += 1) {
-      value = fs[i]!(value)
-    }
-    return value
-  } catch (err) {
-    if (err instanceof Error) {
-      const stackByLines = err.stack?.split("\n")
-      if (stackByLines !== undefined) {
-        err.stack = stackByLines
-          .filter((line) => !line.includes("function/pipe"))
-          .join("\n")
+export function pipe<A>(a: A): A
+export function pipe<A, B>(a: A, ab: (a: A) => B): B
+export function pipe<A, B, C>(a: A, ab: (a: A) => B, bc: (b: B) => C): C
+export function pipe<A, B, C, D>(
+  a: A,
+  ab: (a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+): D
+export function pipe<A, B, C, D, E>(
+  a: A,
+  ab: (a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+): E
+export function pipe<A, B, C, D, E, F>(
+  a: A,
+  ab: (a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+  ef: (e: E) => F,
+): F
+export function pipe<A, B, C, D, E, F, G>(
+  a: A,
+  ab: (a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+  ef: (e: E) => F,
+  fg: (f: F) => G,
+): G
+export function pipe<A, B, C, D, E, F, G, H>(
+  a: A,
+  ab: (a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+  ef: (e: E) => F,
+  fg: (f: F) => G,
+  gh: (g: G) => H,
+): H
+export function pipe<A, B, C, D, E, F, G, H, I>(
+  a: A,
+  ab: (a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+  ef: (e: E) => F,
+  fg: (f: F) => G,
+  gh: (g: G) => H,
+  hi: (h: H) => I,
+): I
+export function pipe(
+  a: unknown,
+  ab?: Function,
+  bc?: Function,
+  cd?: Function,
+  de?: Function,
+  ef?: Function,
+  fg?: Function,
+  gh?: Function,
+  hi?: Function,
+): unknown {
+  switch (arguments.length) {
+    case 1:
+      return a
+    case 2:
+      return ab!(a)
+    case 3:
+      return bc!(ab!(a))
+    case 4:
+      return cd!(bc!(ab!(a)))
+    case 5:
+      return de!(cd!(bc!(ab!(a))))
+    case 6:
+      return ef!(de!(cd!(bc!(ab!(a)))))
+    case 7:
+      return fg!(ef!(de!(cd!(bc!(ab!(a))))))
+    case 8:
+      return gh!(fg!(ef!(de!(cd!(bc!(ab!(a)))))))
+    case 9:
+      return hi!(gh!(fg!(ef!(de!(cd!(bc!(ab!(a))))))))
+    default: {
+      let ret = arguments[0]
+      for (let i = 1; i < arguments.length; i++) {
+        ret = arguments[i](ret)
       }
+      return ret
     }
-    throw err
   }
 }

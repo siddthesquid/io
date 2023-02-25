@@ -1,470 +1,123 @@
-/* eslint-disable prefer-rest-params */
-export function flow<A1 extends ReadonlyArray<unknown>, A2>(
-  a1a2: (...a: A1) => A2,
-): (...a: A1) => A2
-
-export function flow<A1 extends ReadonlyArray<unknown>, A2, A3>(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-): (...a: A1) => A3
-
-export function flow<A1 extends ReadonlyArray<unknown>, A2, A3, A4>(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-): (...a: A1) => A4
-
-export function flow<A1 extends ReadonlyArray<unknown>, A2, A3, A4, A5>(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-): (...a: A1) => A5
-
-export function flow<A1 extends ReadonlyArray<unknown>, A2, A3, A4, A5, A6>(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-): (...a: A1) => A6
-
-export function flow<A1 extends ReadonlyArray<unknown>, A2, A3, A4, A5, A6, A7>(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-): (...a: A1) => A7
-
+export function flow<A extends ReadonlyArray<unknown>, B>(
+  ab: (...a: A) => B,
+): (...a: A) => B
+export function flow<A extends ReadonlyArray<unknown>, B, C>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+): (...a: A) => C
+export function flow<A extends ReadonlyArray<unknown>, B, C, D>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+): (...a: A) => D
+export function flow<A extends ReadonlyArray<unknown>, B, C, D, E>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+): (...a: A) => E
+export function flow<A extends ReadonlyArray<unknown>, B, C, D, E, F>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+  ef: (e: E) => F,
+): (...a: A) => F
+export function flow<A extends ReadonlyArray<unknown>, B, C, D, E, F, G>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+  ef: (e: E) => F,
+  fg: (f: F) => G,
+): (...a: A) => G
+export function flow<A extends ReadonlyArray<unknown>, B, C, D, E, F, G, H>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+  ef: (e: E) => F,
+  fg: (f: F) => G,
+  gh: (g: G) => H,
+): (...a: A) => H
+export function flow<A extends ReadonlyArray<unknown>, B, C, D, E, F, G, H, I>(
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+  ef: (e: E) => F,
+  fg: (f: F) => G,
+  gh: (g: G) => H,
+  hi: (h: H) => I,
+): (...a: A) => I
 export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
+  A extends ReadonlyArray<unknown>,
+  B,
+  C,
+  D,
+  E,
+  F,
+  G,
+  H,
+  I,
+  J,
 >(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-): (...a: A1) => A8
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-): (...a: A1) => A9
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-  a9a10: (a: A9) => A10,
-): (...a: A1) => A10
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-  a9a10: (a: A9) => A10,
-  a10a11: (a: A10) => A11,
-): (...a: A1) => A11
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-  a9a10: (a: A9) => A10,
-  a10a11: (a: A10) => A11,
-  a11a12: (a: A11) => A12,
-): (...a: A1) => A12
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-  a9a10: (a: A9) => A10,
-  a10a11: (a: A10) => A11,
-  a11a12: (a: A11) => A12,
-  a12a13: (a: A12) => A13,
-): (...a: A1) => A13
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-  a9a10: (a: A9) => A10,
-  a10a11: (a: A10) => A11,
-  a11a12: (a: A11) => A12,
-  a12a13: (a: A12) => A13,
-  a13a14: (a: A13) => A14,
-): (...a: A1) => A14
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-  a9a10: (a: A9) => A10,
-  a10a11: (a: A10) => A11,
-  a11a12: (a: A11) => A12,
-  a12a13: (a: A12) => A13,
-  a13a14: (a: A13) => A14,
-  a14a15: (a: A14) => A15,
-): (...a: A1) => A15
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
-  A16,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-  a9a10: (a: A9) => A10,
-  a10a11: (a: A10) => A11,
-  a11a12: (a: A11) => A12,
-  a12a13: (a: A12) => A13,
-  a13a14: (a: A13) => A14,
-  a14a15: (a: A14) => A15,
-  a15a16: (a: A15) => A16,
-): (...a: A1) => A16
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
-  A16,
-  A17,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-  a9a10: (a: A9) => A10,
-  a10a11: (a: A10) => A11,
-  a11a12: (a: A11) => A12,
-  a12a13: (a: A12) => A13,
-  a13a14: (a: A13) => A14,
-  a14a15: (a: A14) => A15,
-  a15a16: (a: A15) => A16,
-  a16a17: (a: A16) => A17,
-): (...a: A1) => A17
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
-  A16,
-  A17,
-  A18,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-  a9a10: (a: A9) => A10,
-  a10a11: (a: A10) => A11,
-  a11a12: (a: A11) => A12,
-  a12a13: (a: A12) => A13,
-  a13a14: (a: A13) => A14,
-  a14a15: (a: A14) => A15,
-  a15a16: (a: A15) => A16,
-  a16a17: (a: A16) => A17,
-  a17a18: (a: A17) => A18,
-): (...a: A1) => A18
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
-  A16,
-  A17,
-  A18,
-  A19,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-  a9a10: (a: A9) => A10,
-  a10a11: (a: A10) => A11,
-  a11a12: (a: A11) => A12,
-  a12a13: (a: A12) => A13,
-  a13a14: (a: A13) => A14,
-  a14a15: (a: A14) => A15,
-  a15a16: (a: A15) => A16,
-  a16a17: (a: A16) => A17,
-  a17a18: (a: A17) => A18,
-  a18a19: (a: A18) => A19,
-): (...a: A1) => A19
-
-export function flow<
-  A1 extends ReadonlyArray<unknown>,
-  A2,
-  A3,
-  A4,
-  A5,
-  A6,
-  A7,
-  A8,
-  A9,
-  A10,
-  A11,
-  A12,
-  A13,
-  A14,
-  A15,
-  A16,
-  A17,
-  A18,
-  A19,
-  A20,
->(
-  a1a2: (...a: A1) => A2,
-  a2a3: (a: A2) => A3,
-  a3a4: (a: A3) => A4,
-  a4a5: (a: A4) => A5,
-  a5a6: (a: A5) => A6,
-  a6a7: (a: A6) => A7,
-  a7a8: (a: A7) => A8,
-  a8a9: (a: A8) => A9,
-  a9a10: (a: A9) => A10,
-  a10a11: (a: A10) => A11,
-  a11a12: (a: A11) => A12,
-  a12a13: (a: A12) => A13,
-  a13a14: (a: A13) => A14,
-  a14a15: (a: A14) => A15,
-  a15a16: (a: A15) => A16,
-  a16a17: (a: A16) => A17,
-  a17a18: (a: A17) => A18,
-  a18a19: (a: A18) => A19,
-  a19a20: (a: A19) => A20,
-): (...a: A1) => A20
-
-export function flow(...fs: Function[]): unknown {
-  const { stack } = new Error()
-  const caller = stack?.split("\n")[2] ?? null
-
-  return function (this: unknown) {
-    try {
-      let value = fs[0]!.apply(this, arguments)
-      for (let i = 1; i < fs.length; i += 1) {
-        value = fs[i]!(value)
+  ab: (...a: A) => B,
+  bc: (b: B) => C,
+  cd: (c: C) => D,
+  de: (d: D) => E,
+  ef: (e: E) => F,
+  fg: (f: F) => G,
+  gh: (g: G) => H,
+  hi: (h: H) => I,
+  ij: (i: I) => J,
+): (...a: A) => J
+export function flow(
+  ab: Function,
+  bc?: Function,
+  cd?: Function,
+  de?: Function,
+  ef?: Function,
+  fg?: Function,
+  gh?: Function,
+  hi?: Function,
+  ij?: Function,
+): unknown {
+  switch (arguments.length) {
+    case 1:
+      return ab
+    case 2:
+      return function (this: unknown) {
+        return bc!(ab.apply(this, arguments))
       }
-      return value
-    } catch (err) {
-      if (err instanceof Error && caller !== null) {
-        const stackByLines = err.stack?.split("\n")
-        const n = stackByLines?.findIndex(
-          (line, i) => i >= 2 && line.includes("function/flow"),
-        )
-        if (stackByLines !== undefined && n !== undefined) {
-          err.stack = `${stackByLines
-            .slice(0, n)
-            .join("\n")}\n${caller}\n${stackByLines.slice(n + 1).join("\n")}`
-        }
+    case 3:
+      return function (this: unknown) {
+        return cd!(bc!(ab.apply(this, arguments)))
       }
-      throw err
-    }
+    case 4:
+      return function (this: unknown) {
+        return de!(cd!(bc!(ab.apply(this, arguments))))
+      }
+    case 5:
+      return function (this: unknown) {
+        return ef!(de!(cd!(bc!(ab.apply(this, arguments)))))
+      }
+    case 6:
+      return function (this: unknown) {
+        return fg!(ef!(de!(cd!(bc!(ab.apply(this, arguments))))))
+      }
+    case 7:
+      return function (this: unknown) {
+        return gh!(fg!(ef!(de!(cd!(bc!(ab.apply(this, arguments)))))))
+      }
+    case 8:
+      return function (this: unknown) {
+        return hi!(gh!(fg!(ef!(de!(cd!(bc!(ab.apply(this, arguments))))))))
+      }
+    case 9:
+      return function (this: unknown) {
+        return ij!(hi!(gh!(fg!(ef!(de!(cd!(bc!(ab.apply(this, arguments)))))))))
+      }
   }
+  return
 }

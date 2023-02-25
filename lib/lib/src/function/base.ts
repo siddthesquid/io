@@ -24,6 +24,12 @@ const provide =
   <U>(fn: (value: T) => U) =>
     fn(value)
 
+const compose =
+  <U, V>(fn1: (value: U) => V) =>
+  <T>(fn0: (value: T) => U) =>
+  (value: T) =>
+    fn1(fn0(value))
+
 const debugWith =
   (tag: string = "DEBUG: ") =>
   <T>(value: T) =>
@@ -40,6 +46,7 @@ const Base = {
   declare,
   tap,
   provide,
+  compose,
   debug,
   debugWith,
 }
