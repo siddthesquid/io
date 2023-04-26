@@ -1,3 +1,0 @@
-const Numeric = {}
-
-export { Numeric }

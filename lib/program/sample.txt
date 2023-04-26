@@ -1,9 +1,0 @@
-import BlahBlah
-  from "../../cadence/contract/BlahBlah.cdc"
-
-pub contract BlahBlah2: BlahBlah {
-
-  pub fun blahBlah(): String {
-    return "blahBlah"
-  }
-}

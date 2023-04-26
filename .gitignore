@@ -37,7 +37,7 @@ yarn-error.log*
 next-env.d.ts
 
 # vscode
-# .vscode/
+.vscode/
 
 # Vim swap files
 *.swp

@@ -4,7 +4,7 @@
   "scripts": {
     "env": "envinfo",
     "clean": "nx run-many --target=clean",
-    "wipe": "nx run-many --target=wipe && rimraf node_modules && rimraf pnpm-lock.yaml",
+    "wipe": "nx run-many --target=wipe && rimraf pnpm-lock.yaml && rimraf node_modules",
     "generate": "nx run-many --target=generate",
     "build": "nx affected --target=build",
     "dev": "nx run-many --target=dev",
@@ -22,11 +22,11 @@
     "ci:publish": "nx affected --target=ci:publish"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
     "cz-conventional-changelog": "^3.3.0",
     "envinfo": "^7.8.1",
-    "nx": "15.0.7",
-    "rimraf": "^3.0.2"
+    "nx": "15.9.2",
+    "rimraf": "^5.0.0"
   }
 }
