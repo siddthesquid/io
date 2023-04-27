@@ -1,5 +1,5 @@
-import { thing } from "./module-b"
+import { BLAH, thing } from "./module-b"
 
 const thing2 = { ...thing, a: 1 }
 
-export { thing2 }
+export { thing2, BLAH }

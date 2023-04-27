@@ -14,7 +14,6 @@ const config: Config = {
   // Coverage
   collectCoverage: true,
   collectCoverageFrom: ["src/**/*.{ts,tsx,js,jsx}"],
-  coveragePathIgnorePatterns: ["node_modules", "dist"],
   coverageDirectory: "coverage",
   coverageReporters: ["text", "json", "html", "cobertura", "text"],
   coverageThreshold: {

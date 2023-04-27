@@ -1,0 +1,10 @@
+{
+  "version": "independent",
+  "packages": ["app/*", "lib/*"],
+  "command": {
+    "version": {
+      "allowBranch": ["release", "release/*"],
+      "conventionalCommits": true
+    }
+  }
+}

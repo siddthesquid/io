@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "rimraf dist .tsbuildinfo coverage",
     "wipe": "rimraf dist .tsbuildinfo coverage node_modules",
-    "generate": "echo \"Nothing to generate\"",
+    "generate": "echo \"Nothing to generate\" $BLAH",
     "build": "tsc -p ./tsconfig.build.json",
     "dev": "tsc -w -p ./tsconfig.build.json",
     "test": "jest",
