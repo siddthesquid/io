@@ -13,17 +13,23 @@
       "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": [
-          "generate",
           "build",
           "test",
           "lint",
-          "ci:generate",
           "ci:build",
           "ci:test",
           "ci:lint"
         ]
       }
     }
+  },
+  "namedInputs": {
+    "project": ["{projectRoot}/**/*"],
+    "includeSrc": ["{projectRoot}/src/**/*"],
+    "excludeTest": [
+      "!{projectRoot}/**/*.(test|spec).[jt]sx?",
+      "!{projectRoot/tests?/**/*"
+    ]
   },
   "targetDefaults": {
     "build": {
@@ -39,10 +45,10 @@
       "dependsOn": ["ci:generate", "^ci:build"]
     },
     "ci:test": {
-      "dependsOn": ["ci:build"]
+      "dependsOn": ["ci:generate"]
     },
     "ci:lint": {
-      "dependsOn": ["ci:build"]
+      "dependsOn": ["ci:generate"]
     },
     "ci:publish": {
       "dependsOn": ["^publish"]

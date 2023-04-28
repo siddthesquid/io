@@ -2,14 +2,16 @@
   "name": "@siddthesquid/lib",
   "version": "0.0.0",
   "license": "MIT",
+  "author": "siddthesquid",
+  "description": "sample library a for monorepo boilerplate testing",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
     "linkDirectory": true
   },
   "scripts": {
-    "clean": "rimraf dist .tsbuildinfo coverage",
-    "wipe": "rimraf dist .tsbuildinfo coverage node_modules",
+    "clean": "rimraf dist .tsbuildinfo coverage out build",
+    "wipe": "rimraf dist .tsbuildinfo coverage node_modules out build",
     "generate": "echo \"Nothing to generate\"",
     "build": "tsc -p ./tsconfig.build.json",
     "dev": "tsc -w -p ./tsconfig.build.json",

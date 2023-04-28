@@ -1,8 +1,8 @@
 {
   "folders": [
     {
-      "name": "@siddthesquid/lib",
-      "path": "./lib/lib"
+      "name": "@siddthesquid/sample-lib-a",
+      "path": "./lib/sample-lib-a"
     }
   ],
   "settings": {

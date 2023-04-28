@@ -1,15 +1,21 @@
 {
   "name": "@siddthesquid/sample-lib-a",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "linkDirectory": true
+    "access": "public"
   },
+  "bin": {
+    "hello-world": "./dist/scripts/hello-world.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "clean": "rimraf dist .tsbuildinfo coverage",
-    "wipe": "rimraf dist .tsbuildinfo coverage node_modules",
+    "clean": "rimraf dist .tsbuildinfo coverage out build .next",
+    "wipe": "rimraf dist .tsbuildinfo coverage node_modules out build .next",
     "generate": "echo \"Nothing to generate\" $BLAH",
     "build": "tsc -p ./tsconfig.build.json",
     "dev": "tsc -w -p ./tsconfig.build.json",
@@ -46,8 +52,7 @@
     "typescript": "^5.0.4"
   },
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=8"
+    "node": ">=18"
   },
   "nx": {
     "targets": {
