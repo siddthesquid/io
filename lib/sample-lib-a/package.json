@@ -1,6 +1,6 @@
 {
   "name": "@siddthesquid/sample-lib-a",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
   "scripts": {
     "clean": "rimraf dist .tsbuildinfo coverage out build .next",
     "wipe": "rimraf dist .tsbuildinfo coverage node_modules out build .next",
-    "generate": "echo \"Nothing to generate\" $BLAH",
+    "generate": "echo \"Nothing to generate\"",
     "build": "tsc -p ./tsconfig.build.json",
     "dev": "tsc -w -p ./tsconfig.build.json",
     "test": "jest",
@@ -53,14 +53,5 @@
   },
   "engines": {
     "node": ">=18"
-  },
-  "nx": {
-    "targets": {
-      "build": {
-        "outputs": [
-          "{projectRoot}/dist"
-        ]
-      }
-    }
   }
 }

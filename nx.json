@@ -13,9 +13,11 @@
       "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": [
+          "generate",
           "build",
           "test",
           "lint",
+          "ci:generate",
           "ci:build",
           "ci:test",
           "ci:lint"
@@ -24,31 +26,70 @@
     }
   },
   "namedInputs": {
-    "project": ["{projectRoot}/**/*"],
-    "includeSrc": ["{projectRoot}/src/**/*"],
+    "source": [
+      "{projectRoot}/src/**/*",
+      "{projectRoot}/package.json",
+      "{projectRoot}/tsconfig.*json"
+    ],
     "excludeTest": [
       "!{projectRoot}/**/*.(test|spec).[jt]sx?",
-      "!{projectRoot/tests?/**/*"
-    ]
+      "!{projectRoot}/tests?/**/*"
+    ],
+    "generateInputs": [],
+    "extraBuildInputs": [],
+    "defaultTestInputs": [
+      "{projectRoot}/**/*.(test|spec).[jt]sx?",
+      "{projectRoot}/tests?/**/*",
+      "{projectRoot}/jest.config.js"
+    ],
+    "extraTestInputs": [],
+    "defaultLintInputs": [
+      "{projectRoot}/.eslintrc.*",
+      "{projectRoot}/tsconfig.*json",
+      "{projectRoot}/.prettier*"
+    ],
+    "extraLintInputs": [],
+    "defaultLintOutputs": [],
+    "extraLintOutputs": []
   },
   "targetDefaults": {
+    "generate": {
+      "inputs": ["generateInputs"],
+      "outputs": []
+    },
     "build": {
-      "dependsOn": ["generate", "^build"]
+      "dependsOn": ["generate", "^build"],
+      "inputs": ["source", "excludeTest", "extraBuildInputs"],
+      "outputs": ["{projectRoot}/dist/**/*", "{projectRoot}/.tsbuildinfo"]
     },
     "test": {
-      "dependsOn": ["build"]
+      "dependsOn": ["build"],
+      "inputs": ["source", "defaultTestInputs", "extraTestInputs"],
+      "outputs": ["{projectRoot}/coverage/**/*"]
     },
     "lint": {
-      "dependsOn": ["build"]
+      "dependsOn": ["build"],
+      "inputs": ["source", "defaultLintInputs", "extraLintInputs"],
+      "outputs": []
+    },
+    "ci:generate": {
+      "inputs": ["generateInputs"],
+      "outputs": ["generateOutputs"]
     },
     "ci:build": {
-      "dependsOn": ["ci:generate", "^ci:build"]
+      "dependsOn": ["ci:generate", "^ci:build"],
+      "inputs": ["src", "extraBuildInputs", "excludeTest"],
+      "outputs": ["defaultBuildOutputs", "extraBuildOutputs"]
     },
     "ci:test": {
-      "dependsOn": ["ci:generate"]
+      "dependsOn": ["ci:build"],
+      "inputs": ["src", "defaultTestInputs", "extraTestInputs"],
+      "outputs": ["defaultTestOutputs", "extraTestOutputs"]
     },
     "ci:lint": {
-      "dependsOn": ["ci:generate"]
+      "dependsOn": ["ci:build"],
+      "inputs": ["src", "defaultLintInputs", "extraLintInputs"],
+      "outputs": ["defaultLintOutputs", "extraLintOutputs"]
     },
     "ci:publish": {
       "dependsOn": ["^publish"]
